@@ -34,7 +34,6 @@ class InfluxDbConnector
         $this->conn     = $this->CheckInfluxConnection();
     }
 
-
     public function CheckInfluxConnection()
     {
         $final_url = $this->url.'/ping?u='.$this->username.'&p='.$this->password;
