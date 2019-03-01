@@ -101,4 +101,28 @@ class InfluxDbConnector
 
         return $res->content.' - '.$res->status;
     }
+
+    public function GetDataFromMeasurement($measurement_name)
+    {
+        if ($this->conn === false)
+        {
+            return false;
+        }
+
+        $final_url = $this->url.'/query?db='.$this->dbname.'&u='.$this->username.'&p='.$this->password;
+        $q = "Select * from \"$measurement_name\"";
+
+        $data = array(
+            'q' => $q
+        );
+
+        $res = $this->query->Postquery($final_url,$data);
+
+        if ($res->status === 200)
+        {
+            return $res->content;
+        }
+
+        return $res->content.' - '.$res->status;
+    }
 }
