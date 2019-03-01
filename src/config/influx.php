@@ -12,5 +12,7 @@ return [
     "username" => env('influx_username',''),
     "password" => env('influx_password',''),
     "host"     => env('influx_host','localhost'),
-    "port"     => env('influx_port','8086')
+    "port"     => env('influx_port','8086'),
+    "protocol" => env('influx_protocol','http')
+
 ];

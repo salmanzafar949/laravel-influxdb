@@ -17,7 +17,8 @@
         "influxdb"
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "ixudra/curl": ">=6.0.0"
     },
     "require-dev": {
         "laravel/framework": ">=5.0"
@@ -33,7 +34,7 @@
         "laravel": {
             "providers": [
                 "Salman\\Influx\\InfluxServiceProvider"
-            ],
+            ]
         }
     }
 }
